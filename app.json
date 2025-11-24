@@ -1,55 +1,77 @@
 {
-    "expo": {
-        "name": "AI Popup Infopedia",
-        "slug": "ai-popup-infopedia",
-        "scheme": "aipopup",
-        "version": "1.0.0",
-        "orientation": "portrait",
-        "icon": "./assets/icon.png",
-        "userInterfaceStyle": "dark",
-        "splash": {
-            "image": "./assets/splash.png",
-            "resizeMode": "contain",
-            "backgroundColor": "#333333"
-        },
-        "assetBundlePatterns": [
-            "**/*"
-        ],
-        "ios": {
-            "supportsTablet": true
-        },
-        "android": {
-            "adaptiveIcon": {
-                "foregroundImage": "./assets/adaptive-icon.png",
-                "backgroundColor": "#333333"
-            },
-            "package": "com.aipopup.infopedia"
-        },
-        "web": {
-            "favicon": "./assets/favicon.png"
-        },
-        "plugins": [
-            "expo-font",
-            [
-                "expo-share-intent",
-                {
-                    "android": {
-                        "intentFilters": [
-                            {
-                                "action": "SEND",
-                                "data": {
-                                    "mimeType": "text/plain"
-                                }
-                            }
-                        ]
-                    },
-                    "ios": {
-                        "activationRules": {
-                            "NSExtensionActivationSupportsText": true
-                        }
-                    }
+  "expo": {
+    "name": "AI Popup Infopedia",
+    "slug": "ai-popup-infopedia",
+    "scheme": "aipopup",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "dark",
+    "splash": {
+      "image": "./assets/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#333333"
+    },
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "ios": {
+      "supportsTablet": true
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "backgroundColor": "#333333"
+      },
+      "package": "com.aipopup.infopedia"
+    },
+    "web": {
+      "favicon": "./assets/favicon.png"
+    },
+    "plugins": [
+      "expo-font",
+      [
+        "expo-share-intent",
+        {
+          "android": {
+            "intentFilters": [
+              {
+                "action": "SEND",
+                "data": {
+                  "mimeType": "text/plain"
                 }
+              }
             ]
-        ]
+          },
+          "ios": {
+            "activationRules": {
+              "NSExtensionActivationSupportsText": true
+            }
+          }
+        }
+      ]
+    ],
+    "extra": {
+      "eas": {
+        "build": {
+          "experimental": {
+            "ios": {
+              "appExtensions": [
+                {
+                  "targetName": "ShareExtension",
+                  "bundleIdentifier": "undefined.share-extension",
+                  "entitlements": {
+                    "com.apple.security.application-groups": [
+                      "group.undefined"
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        },
+        "projectId": "ai-popup-infopedia"
+      }
     }
+  }
 }
