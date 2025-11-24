@@ -30,11 +30,6 @@
         },
         "plugins": [
             "expo-font"
-        ],
-        "extra": {
-            "eas": {
-                "projectId": "ai-popup-infopedia"
-            }
-        }
+        ]
     }
 }
