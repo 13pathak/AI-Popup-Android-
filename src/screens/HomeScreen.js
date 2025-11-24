@@ -4,7 +4,6 @@ import { TextInput, Button, Card, Text, ActivityIndicator, Menu, Divider, useThe
 import { useFocusEffect } from '@react-navigation/native';
 import { getSettings, getLists, addToHistory, getLastUsedListId, saveLastUsedListId } from '../utils/storage';
 import { fetchDefinition } from '../utils/api';
-import { useShareIntent } from 'expo-share-intent';
 
 export default function HomeScreen({ navigation }) {
     const theme = useTheme();
@@ -18,18 +17,6 @@ export default function HomeScreen({ navigation }) {
     const [snackbarVisible, setSnackbarVisible] = useState(false);
     const [snackbarMessage, setSnackbarMessage] = useState('');
     const [currentModelName, setCurrentModelName] = useState('');
-
-    // --- Share Intent Hook ---
-    const { hasShareIntent, shareIntent, resetShareIntent } = useShareIntent();
-
-    useEffect(() => {
-        if (hasShareIntent && shareIntent.type === 'text' && shareIntent.value) {
-            setText(shareIntent.value);
-            // Optional: Auto-fetch definition
-            // handleGetDefinition(shareIntent.value);
-            resetShareIntent();
-        }
-    }, [hasShareIntent, shareIntent, resetShareIntent]);
 
     useFocusEffect(
         useCallback(() => {
