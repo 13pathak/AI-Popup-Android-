@@ -29,27 +29,7 @@
             "favicon": "./assets/favicon.png"
         },
         "plugins": [
-            "expo-font",
-            [
-                "expo-share-intent",
-                {
-                    "android": {
-                        "intentFilters": [
-                            {
-                                "action": "SEND",
-                                "data": {
-                                    "mimeType": "text/plain"
-                                }
-                            }
-                        ]
-                    },
-                    "ios": {
-                        "activationRules": {
-                            "NSExtensionActivationSupportsText": true
-                        }
-                    }
-                }
-            ]
+            "expo-font"
         ],
         "extra": {
             "eas": {
