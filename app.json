@@ -1,7 +1,7 @@
 {
     "expo": {
-        "name": "AI Popup Infopedia",
-        "slug": "ai-popup-infopedia",
+        "name": "AI Popup",
+        "slug": "ai-popup",
         "scheme": "aipopup",
         "version": "1.0.0",
         "orientation": "portrait",
@@ -37,6 +37,12 @@
                         "intentFilters": [
                             {
                                 "action": "SEND",
+                                "data": {
+                                    "mimeType": "text/plain"
+                                }
+                            },
+                            {
+                                "action": "android.intent.action.PROCESS_TEXT",
                                 "data": {
                                     "mimeType": "text/plain"
                                 }
